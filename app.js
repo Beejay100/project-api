@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 });
 // get post delete put patch
 
-app.post('/api/admin', (req, res) => {
+app.post('/api/admin', (req, res, next) => {
 	const studentReg = new Student({
 			regNo: req.body.regNo
 		})
@@ -35,7 +35,7 @@ app.post('/api/admin', (req, res) => {
 		})
 });
 
-app.get('/api/admin', (req, res) => {
+app.get('/api/admin', (req, res, next) => {
 	Student.find().then(
 		(students) => {
 			res.status(200).json(students)
