@@ -1,0 +1,3 @@
+nodejs + express (runtime environment (server-side javascript) + express framework)
+mongodb + mongoose (database)
+mongo password: uJ3852pe5p8RdGst
