@@ -65,10 +65,10 @@ app.get('/api/admin/:id', (req, res, next) => {
 // 		(err) => res.status(400).json({error: err}))
 // });
 
-// app.delete('/api/recipes/:id', (req, res, next) => {
-// 	Recipe.deleteOne({ _id: req.params.id }).then(
-// 		() => res.status(200).json({ message: 'Deleted'})).catch(
-// 		(err) => res.status(404).json({error: err}))
-// });
+app.delete('/api/admin/:id', (req, res, next) => {
+	Student.deleteOne({ _id: req.params.id }).then(
+		() => res.status(200).json({ message: 'Deleted'})).catch(
+		(err) => res.status(404).json({error: err}))
+});
 
 module.exports = app;
