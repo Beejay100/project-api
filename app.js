@@ -51,19 +51,15 @@ app.get('/api/admin/:id', (req, res, next) => {
 		(err) => res.status(404).json(err))
 });
 
-// app.put('/api/recipes/:id', (req, res, next) => {
-// 	const recipe = new Recipe({
-// 			_id: req.params.id,
-// 			title: req.body.title,
-// 		    ingredients: req.body.ingredients,
-// 		    instructions: req.body.instructions,
-// 		    difficulty: req.body.difficulty,
-// 		    time: req.body.time,
-// 		})
-// 	Recipe.updateOne({_id: req.params.id}, recipe).then(
-// 		() => res.status(201).json({message: 'recipe updated'})).catch(
-// 		(err) => res.status(400).json({error: err}))
-// });
+app.put('/api/admin/:id', (req, res, next) => {
+	const studentReg = new Student({
+			_id: req.params.id,
+			regNo: req.body.regNo,
+		})
+	Student.updateOne({_id: req.params.id}, studentReg).then(
+		() => res.status(201).json({message: 'student reg updated'})).catch(
+		(err) => res.status(400).json({error: err}))
+});
 
 app.delete('/api/admin/:id', (req, res, next) => {
 	Student.deleteOne({ _id: req.params.id }).then(
